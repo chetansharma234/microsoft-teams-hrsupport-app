@@ -50,7 +50,7 @@ namespace Microsoft.Teams.Apps.AskHR.Cards
                 {
                     new AdaptiveSubmitAction
                     {
-                        Title = Resource.AskAnExpertButtonText,
+                        Title = Resource.AskAnExpertButtonLabelText,
                         Data = new ResponseCardPayload
                         {
                             MsTeams = new CardAction
