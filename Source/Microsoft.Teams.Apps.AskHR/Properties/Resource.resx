@@ -525,4 +525,7 @@ My key features:
     <value>TenantId</value>
     <comment>Tenant Id</comment>
   </data>
+  <data name="AskAnExpertButtonLabelText" xml:space="preserve">
+    <value>Ask an expert</value>
+  </data>
 </root>
