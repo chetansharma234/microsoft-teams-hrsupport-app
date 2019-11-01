@@ -981,5 +981,14 @@ namespace Microsoft.Teams.Apps.AskHR.Properties {
                 return ResourceManager.GetString("WelcomeTeamCardContent", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ask an expert.
+        /// </summary>
+        public static string AskAnExpertButtonLabelText {
+            get {
+                return ResourceManager.GetString("AskAnExpertButtonLabelText", resourceCulture);
+            }
+        }
     }
 }
