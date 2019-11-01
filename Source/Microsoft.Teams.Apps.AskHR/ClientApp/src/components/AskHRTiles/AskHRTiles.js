@@ -61,26 +61,33 @@ class AskHRTiles extends Component {
                                 noDataAvailableMessage: "",
                                 askHRTabData: data
                             });
-                            document.getElementById("root").style.display = "block";
                         }
                         else {
                             this.setState({ noDataAvailableMessage: "My Team of Experts hasn't added anything here yet." });
                             console.log(this.state.noDataAvailableMessage);
                         }
+                        document.getElementById("root").style.display = "block";
                     }
                     else {
-                        this.setState({ noDataAvailableMessage: "Oops!!! Something went wrong." });
+                        this.setState({ noDataAvailableMessage: "Oops!!! Something went wrong. Please refresh to sign in again." });
                         console.log(this.state.noDataAvailableMessage);
+                        localStorage.clear();
+                        document.getElementById("root").style.display = "block";
                     }
                 },
                     (error) => {
-                        this.setState({ error: error, noDataAvailableMessage: "Oops!!! Something went wrong." });
+                        this.setState({ error: error, noDataAvailableMessage: "Oops!!! Something went wrong. Please refresh to sign in again." });
+                        localStorage.clear();
                         console.error(this.state.error);
                         ai.appInsights.trackException({ name: this.state.error });
+                        document.getElementById("root").style.display = "block";
                     })
                 .catch((error) => {
-                    this.setState({ error: error, noDataAvailableMessage: "Oops!!! Something went wrong." });
+                    this.setState({ error: error, noDataAvailableMessage: "Oops!!! Something went wrong. Please refresh to sign in again." });
                     console.error(this.state.error);
+                    console.log("Logged in user tenant is not valid");
+                    localStorage.clear();
+                    document.getElementById("root").style.display = "block";
                     ai.appInsights.trackException({ name: this.state.error });
                 });
         }
